@@ -1,0 +1,125 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "productName": "Smart Refrigerator",
+        "productCategory": "Refrigerators",
+        "price" : "Tsh 100,000 ",
+        "productDetail": "A smart refrigerator with built-in touchscreen, Wi-Fi connectivity, and energy-saving features.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "image3.jpg"
+        ]
+      },
+      {
+        "id": 2,
+        "productName": "Robot Vacuum Cleaner",
+        "productCategory": "Vacuum Cleaners",
+        "price" : "Tsh 100,000 ",
+        "productDetail": "An intelligent robot vacuum cleaner that automatically navigates and cleans your home.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "image6.jpg"
+        ]
+      },
+      {
+        "price" : "Tsh 100,000 ",
+        "id": 3,
+        "productName": "Smart Thermostat",
+        "productCategory": "Thermostats",
+        "productDetail": "A smart thermostat that learns your heating and cooling preferences and adjusts accordingly.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "image9.jpg"
+        ]
+      },
+      {
+        "price" : "Tsh 100,000 ",
+        "id": 4,
+        "productName": "Smart Washing Machine",
+        "productCategory": "Washing Machines",
+        "productDetail": "A washing machine with smart features like app control, load sensing, and energy efficiency.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "image12.jpg"
+        ]
+      },
+      {
+        "price" : "Tsh 100,000 ",
+        "id": 5,
+        "productName": "Air Purifier",
+        "productCategory": "Air Purifiers",
+        "productDetail": "An air purifier that removes dust, allergens, and pollutants from the air, improving indoor air quality.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dimage14.jpg",
+          "image15.jpg"
+        ]
+      },
+      {
+        "price" : "Tsh 100,000 ",
+        "id": 6,
+        "productName": "Smart Microwave Oven",
+        "productCategory": "Microwave Ovens",
+        "productDetail": "A microwave oven with smart cooking presets and voice control capabilities.",
+        "productImages": [
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "image18.jpg"
+        ]
+      },
+      {
+        "price" : "Tsh 100,000 ",
+        "id": 7,
+        "productName": "Coffee Maker",
+        "productCategory": "Coffee Makers",
+        "productDetail": "A coffee maker with programmable settings for brewing coffee just the way you like it.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dimage20.jpg",
+          "image21.jpg"
+        ]
+      },
+      {
+        "price" : "Tsh 100,000 ",
+        "id": 8,
+        "productName": "Smart Blender",
+        "productCategory": "Blenders",
+        "productDetail": "A blender with smart blending modes and app control for creating smoothies, soups, and more.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "image24.jpg"
+        ]
+      },
+      {
+        "price" : "Tsh 100,000 ",
+        "id": 9,
+        "productName": "Smart Rice Cooker",
+        "productCategory": "Rice Cookers",
+        "productDetail": "A rice cooker with smart cooking algorithms for perfectly cooked rice every time.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "image27.jpg"
+        ]
+      },
+      {
+        "price" : "Tsh 100,000 ",
+        "id": 10,
+        "productName": "Electric Kettle",
+        "productCategory": "Kettles",
+        "productDetail": "An electric kettle with rapid boiling technology and automatic shut-off feature for safety.",
+        "productImages": [
+          "https://plus.unsplash.com/premium_photo-1677159499898-b061fb5bd2d7?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1608538770329-65941f62f9f8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "image30.jpg"
+        ]
+      }
+    ]
+  }
+  
