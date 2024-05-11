@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import data from "../data/product.json";
 import { useParams } from "react-router-dom";
+import Modal from "../component/buy_request_modal";
 
 function Product() {
   const [product, setProduct] = useState(null); // Changed initial state to null
+  const [showModal, setShowModal] = useState(false);
+
   const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -37,6 +40,7 @@ function Product() {
 
   return (
     <section class="py-12 sm:py-16" style={{ minHeight: "100vh" }}>
+      <Modal showModal={showModal} setShowModal={setShowModal} product={product} />
       <div class="container mx-auto px-4">
         <nav class="flex">
           <ol role="list" class="flex items-center">
@@ -319,6 +323,7 @@ function Product() {
 
               <button
                 type="button"
+                onClick={() => setShowModal(true)}
                 class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
               >
                 <svg
@@ -335,7 +340,7 @@ function Product() {
                     d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                   />
                 </svg>
-                Add to cart
+                Buy Request
               </button>
             </div>
 
@@ -389,7 +394,6 @@ function Product() {
                   class="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"
                 >
                   {" "}
-                  Description{" "}
                 </a>
 
                 <a
@@ -424,6 +428,41 @@ function Product() {
           </div>
         </div>
       </div>
+      {/* <section className="overflow-hidden rounded-lg shadow-2xl md:grid md:grid-cols-3">
+        <img
+          alt=""
+          src="https://images.unsplash.com/photo-1611510338559-2f463335092c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+          className="h-32 w-full object-cover md:h-full"
+        />
+
+        <div className="p-4 text-center sm:p-6 md:col-span-2 lg:p-8">
+          <p className="text-sm font-semibold uppercase tracking-widest">
+            Run with the pack
+          </p>
+
+          <h2 className="mt-6 font-black uppercase">
+            <span className="text-4xl font-black sm:text-5xl lg:text-6xl">
+              {" "}
+              Get 20% off{" "}
+            </span>
+
+            <span className="mt-2 block text-sm">
+              On your next order over $50
+            </span>
+          </h2>
+
+          <a
+            className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white"
+            href="#"
+          >
+            Get Discount
+          </a>
+
+          <p className="mt-8 text-xs font-medium uppercase text-gray-400">
+            Offer valid until 24th March, 2021 *
+          </p>
+        </div>
+      </section> */}
     </section>
   );
 }
