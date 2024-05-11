@@ -58,20 +58,22 @@ function Navigation() {
 
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
+
+              <a
+                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                    href="#"
+                  >
+                    Register
+                  </a>
+                
+
+                <div className="hidden sm:flex">
                 <a
                   className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
                   href="#"
                 >
                   Login
                 </a>
-
-                <div className="hidden sm:flex">
-                  <a
-                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                    href="#"
-                  >
-                    Register
-                  </a>
                 </div>
               </div>
 
@@ -106,7 +108,7 @@ function Navigation() {
         <div className="md:hidden bg-gray-100">
           <ul className="py-2 px-4">
             {/* Menu Items */}
-            <li>
+            <li className="m-3">
               <a
                 className="text-gray-500 transition hover:text-gray-500/75"
                 href="/all_product"
@@ -116,7 +118,7 @@ function Navigation() {
               </a>
             </li>
 
-            <li>
+            <li className="m-3">
               <a
                 className="text-gray-500 transition hover:text-gray-500/75"
                 href="/about"
@@ -126,7 +128,7 @@ function Navigation() {
               </a>
             </li>
 
-            <li>
+            <li className="m-3">
               <a
                 className="text-gray-500 transition hover:text-gray-500/75"
                 href="/testmonony"
@@ -135,6 +137,16 @@ function Navigation() {
                 Testimonal{" "}
               </a>
             </li>
+            <li className="m-3">
+            <a
+                  className="rounded-md bg-teal-600  px-5 py-2.5 text-sm font-medium text-white shadow"
+                  href="#"
+                >
+                  Login
+                </a>
+            </li>
+            
+
           </ul>
         </div>
       )}
