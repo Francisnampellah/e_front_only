@@ -40,7 +40,11 @@ function Product() {
 
   return (
     <section class="py-12 sm:py-16" style={{ minHeight: "100vh" }}>
-      <Modal showModal={showModal} setShowModal={setShowModal} product={product} />
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        product={product}
+      />
       <div class="container mx-auto px-4">
         <nav class="flex">
           <ol role="list" class="flex items-center">
@@ -238,7 +242,7 @@ function Product() {
 
             <h2 class="mt-8 text-base text-gray-900">Coffee Type</h2>
             <div class="mt-3 flex select-none flex-wrap items-center gap-1">
-              <label class="">
+              {/* <label class="">
                 <input
                   type="radio"
                   name="type"
@@ -271,10 +275,10 @@ function Product() {
                 <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
                   Groud
                 </p>
-              </label>
+              </label> */}
             </div>
 
-            <h2 class="mt-8 text-base text-gray-900">Choose subscription</h2>
+            {/* <h2 class="mt-8 text-base text-gray-900">Choose subscription</h2>
             <div class="mt-3 flex select-none flex-wrap items-center gap-1">
               <label class="">
                 <input
@@ -313,11 +317,11 @@ function Product() {
                 </p>
                 <span class="mt-1 block text-center text-xs">$40/mo</span>
               </label>
-            </div>
+            </div> */}
 
             <div class="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
               <div class="flex items-end">
-                <h1 class="text-3xl font-bold">${"data?.price"}</h1>
+                <h1 class="text-3xl font-bold">{product.price}</h1>
                 <span class="text-base">/item</span>
               </div>
 
@@ -361,7 +365,7 @@ function Product() {
                     class=""
                   ></path>
                 </svg>
-                Free shipping worldwide
+                Tunatuma tanzania nzima
               </li>
 
               <li class="flex items-center text-left text-sm font-medium text-gray-600">
@@ -410,7 +414,7 @@ function Product() {
               </nav>
             </div>
 
-            <div class="mt-8 flow-root sm:mt-12">
+            {/* <div class="mt-8 flow-root sm:mt-12">
               <h1 class="text-3xl font-bold">Delivered To Your Door</h1>
               <p class="mt-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
@@ -424,7 +428,7 @@ function Product() {
                 numquam enim facere.
               </p>
               <p class="mt-4">{"data?.description"}</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
