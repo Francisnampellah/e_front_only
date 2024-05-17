@@ -14,10 +14,14 @@ const signUp = async (formData) => {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((response) => {
-      console.log(response);
-      console.log("User signed up successfully");
+      if (!response.user.uid) {
+        throw error;
+      }
+      
       setDoc(doc(db, "users", response.user.uid), { name, phone });
       console.log("Additional user data stored successfully");
+      console.log(response);
+      return response;
     })
     .catch((error) => {
       console.error("Error signing up:", error);

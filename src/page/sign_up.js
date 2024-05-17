@@ -27,7 +27,9 @@ const Sign_Up = () => {
       console.error("Passwords do not match");
       return;
     }
-    await signUp(formData);
+    const responce = await signUp(formData);
+
+    console.log(responce);
     setShowModal(true);
     setFormData({
       email: "",
@@ -213,9 +215,9 @@ const Sign_Up = () => {
                 </button>
 
                 <p class="mt-4 text-sm text-gray-500 sm:mt-0">
-                 Je una Account tayari ?
+                  Je una Account tayari ?
                   <a href="/sign_in" class="text-gray-700 underline">
-                     .. Log in
+                    .. Log in
                   </a>
                   .
                 </p>
