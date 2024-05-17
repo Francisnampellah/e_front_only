@@ -25,13 +25,6 @@ function Product() {
     return (
       <div className="flex items-center justify-center">Product Not Found</div>
     );
-    // setTimeout(() => {
-    //   return (
-    //     <div className="flex items-center justify-center">
-    //       Product Not Found
-    //     </div>
-    //   );
-    // }, 2000);
   }
 
   const changeImage = (image) => {

@@ -57,22 +57,20 @@ function Navigation() {
 
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
-
-              <a
-                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                    href="#"
-                  >
-                    Register
-                  </a>
-                
+                <a
+                  className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                  href="/sign_up"
+                >
+                  Register
+                </a>
 
                 <div className="hidden sm:flex">
-                <a
-                  className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                  href="#"
-                >
-                  Login
-                </a>
+                  <a
+                    className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                    href="/sign_in"
+                  >
+                    Login
+                  </a>
                 </div>
               </div>
 
@@ -137,15 +135,13 @@ function Navigation() {
               </a>
             </li>
             <li className="m-3">
-            <a
-                  className="rounded-md bg-teal-600  px-5 py-2.5 text-sm font-medium text-white shadow"
-                  href="#"
-                >
-                  Login
-                </a>
+              <a
+                className="rounded-md bg-teal-600  px-5 py-2.5 text-sm font-medium text-white shadow"
+                href="#"
+              >
+                Login
+              </a>
             </li>
-            
-
           </ul>
         </div>
       )}
