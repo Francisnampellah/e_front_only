@@ -10,7 +10,12 @@ const Sign_Up = () => {
     password: "",
     confirmation: "",
   });
-  const [showModal, setShowModal] = useState(false);
+  const [modal, setModal] = useState({
+    status: false,
+    success: false,
+    msg: "",
+    color: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +37,12 @@ const Sign_Up = () => {
 
     signUp(formData)
       .then((response) => {
-        setShowModal(true);
+        setModal({
+          status: true,
+          success: true,
+          msg: "Account created successfully",
+          color: "red",
+        });
         setFormData({
           email: "",
           name: "",
@@ -45,17 +55,17 @@ const Sign_Up = () => {
       })
       .catch((error) => {
         console.error("Error signing up:", error.message);
-        // Optionally, you can set an error state to show a message to the user
+        setModal({
+          status: true,
+          msg: "Account wasnt created" + " " + error.message,
+          color: "",
+        });
       });
   };
 
   return (
     <section class="bg-white">
-      <Modal
-        setShowModal={setShowModal}
-        showModal={showModal}
-        name={formData.name}
-      />
+      <Modal setModal={setModal} modal={modal} name={formData.name} />
       <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
         <aside class="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
           <img
