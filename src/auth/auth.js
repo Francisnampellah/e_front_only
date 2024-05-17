@@ -9,25 +9,27 @@ import { auth } from "../firebase/firebase";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 const db = getFirestore();
 
-const signUp = async (formData) => {
+const signUp = (formData) => {
   const { email, password, name, phone } = formData;
 
-  createUserWithEmailAndPassword(auth, email, password)
+  return createUserWithEmailAndPassword(auth, email, password)
     .then((response) => {
-      if (!response.user.uid) {
-        throw error;
+      const user = response.user;
+      console.log(user);
+      if (!user.uid) {
+        throw new Error("Sign-up was not successful. UID missing.");
       }
-      
-      setDoc(doc(db, "users", response.user.uid), { name, phone });
-      console.log("Additional user data stored successfully");
-      console.log(response);
-      return response;
+
+      return setDoc(doc(db, "users", user.uid), { name, phone }).then(() => {
+        console.log("Additional user data stored successfully");
+        return response;
+      });
     })
     .catch((error) => {
-      console.error("Error signing up:", error);
+      console.error("Error signing up:", error.message);
+      throw error; // rethrow the error if you want to handle it further up the call stack
     });
 };
-
 // Sign in function
 const signIn = async (email, password) => {
   try {

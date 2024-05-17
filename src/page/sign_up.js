@@ -22,22 +22,31 @@ const Sign_Up = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+
     const { password, confirmation } = formData;
     if (password !== confirmation) {
       console.error("Passwords do not match");
+      // Optionally, you can set an error state to show a message to the user
       return;
     }
-    const responce = await signUp(formData);
 
-    console.log(responce);
-    setShowModal(true);
-    setFormData({
-      email: "",
-      name: "",
-      phone: "",
-      password: "",
-      confirmation: "",
-    });
+    signUp(formData)
+      .then((response) => {
+        setShowModal(true);
+        setFormData({
+          email: "",
+          name: "",
+          phone: "",
+          password: "",
+          confirmation: "",
+        });
+
+        console.log("User signed up successfully:", response);
+      })
+      .catch((error) => {
+        console.error("Error signing up:", error.message);
+        // Optionally, you can set an error state to show a message to the user
+      });
   };
 
   return (
