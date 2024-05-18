@@ -1,6 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import { The_Context } from "../data/Context";
 
 const Sign_in = () => {
+  const { setAccess_token } = useContext(The_Context);
+
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg text-center">
@@ -101,5 +105,4 @@ const Sign_in = () => {
   );
 };
 
-
-export default Sign_in
+export default Sign_in;

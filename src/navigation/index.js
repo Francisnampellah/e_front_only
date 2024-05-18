@@ -1,15 +1,38 @@
 import React, { useState } from "react";
 import Shop from "../assets/shop.svg";
+import { The_Context } from "../data/Context";
+import { useContext } from "react";
+import { logOut } from "../auth/auth";
+import Modal from "../component/costume_modal";
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [modal, setModal] = useState({
+    status: false,
+    success: false,
+    msg: "",
+    color: "",
+  });
+
+  const { access_token } = useContext(The_Context);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+ const handleLogOut = () => {
+    setModal({
+      status: true,
+      success: true,
+      msg: "Successfully logged out",
+      color: "green",
+    });
+    logOut();
+  };
+
   return (
     <header className="bg-white">
+      <Modal modal={modal} setModal={setModal} />
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -56,23 +79,36 @@ function Navigation() {
             </nav>
 
             <div className="flex items-center gap-4">
-              <div className="sm:flex sm:gap-4">
-                <a
-                  className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                  href="/sign_up"
-                >
-                  Register
-                </a>
-
+              {access_token ? (
                 <div className="hidden sm:flex">
-                  <a
-                    className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                    href="/sign_in"
-                  >
-                    Login
+                  <a href="/">
+                    <button
+                      onClick={handleLogOut}
+                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                    >
+                      Logout
+                    </button>
                   </a>
                 </div>
-              </div>
+              ) : (
+                <div className="sm:flex sm:gap-4">
+                  <a
+                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                    href="/sign_up"
+                  >
+                    Register
+                  </a>
+
+                  <div className="hidden sm:flex">
+                    <a
+                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                      href="/sign_in"
+                    >
+                      Login
+                    </a>
+                  </div>
+                </div>
+              )}
 
               <div className="block md:hidden">
                 <button

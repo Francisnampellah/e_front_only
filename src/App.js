@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 import "./app.css";
 import Navigation from "./navigation";
 import Home from "./page/home";
@@ -8,8 +9,18 @@ import Product from "./page/product";
 import About from "./page/about";
 import Signup from "./page/sign_up";
 import Sign_in from "./page/sign_In";
+import { The_Context } from "./data/Context";
+import { useContext } from "react";
 
 export default function App() {
+  const { access_token, setAccess_token } = useContext(The_Context);
+
+  useEffect(() => {
+    if (localStorage.getItem("access_token")) {
+      setAccess_token(localStorage.getItem("access_token"));
+    }
+  }, []);
+
   return (
     <div className="">
       <div>

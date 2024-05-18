@@ -9,17 +9,21 @@ import { auth } from "../firebase/firebase";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 const db = getFirestore();
 
-const signUp = (formData) => {
+const SignUp = (formData) => {
   const { email, password, name, phone } = formData;
 
   return createUserWithEmailAndPassword(auth, email, password)
     .then((response) => {
       const user = response.user;
+
       console.log(user);
       if (!user.uid) {
         throw new Error("Sign-up was not successful. UID missing.");
       }
 
+      localStorage.setItem("access_token", user.accessToken);
+
+      console.log(user);
       return setDoc(doc(db, "users", user.uid), { name, phone }).then(() => {
         console.log("Additional user data stored successfully");
         return response;
@@ -44,13 +48,15 @@ const signIn = async (email, password) => {
 const logOut = async () => {
   try {
     await signOut(auth);
+    localStorage.setItem("access_token", "");
+
     console.log("User signed out successfully");
   } catch (error) {
     console.error("Error signing out:", error);
   }
 };
 
-export { signUp, signIn, logOut };
+export { SignUp, signIn, logOut };
 
 // // src/auth.js
 // import { auth } from "../firebase/firebase";

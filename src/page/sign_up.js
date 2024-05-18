@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { signUp } from "../auth/auth";
-import Modal from "../component/sign_up_modal";
+import { SignUp } from "../auth/auth";
+import Modal from "../component/costume_modal";
+import { useContext } from "react";
 
 const Sign_Up = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,8 @@ const Sign_Up = () => {
     msg: "",
     color: "",
   });
+
+  const { setAccess_token } = useContext(The_Context);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,8 +38,9 @@ const Sign_Up = () => {
       return;
     }
 
-    signUp(formData)
+    SignUp(formData)
       .then((response) => {
+        setAccess_token(response.user.accessToken);
         setModal({
           status: true,
           success: true,
@@ -255,6 +259,7 @@ export default Sign_Up;
 // import React, { useState } from 'react';
 // import { setupRecaptcha, sendOtp, verifyOtp } from '../auth/auth';
 // import SignUp from "./sign_up";
+import { The_Context } from "../data/Context";
 
 // const SignUp = () => {
 //   const [phoneNumber, setPhoneNumber] = useState('');

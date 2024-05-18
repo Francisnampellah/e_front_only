@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Product_card from "./product_card";
 
-
 const Pagination = ({ items }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
@@ -61,14 +60,14 @@ const Pagination = ({ items }) => {
           </a>
         </li>
 
-        {pageNumbers.map((number) => {
+        {pageNumbers.map((number, index) => {
           return (
-            <li>
+            <li key={index}>
               <a
                 href="#"
                 className="block size-8 rounded border border-gray-100 bg-white text-center leading-8 text-gray-900"
               >
-               {number}
+                {number}
               </a>
             </li>
           );
