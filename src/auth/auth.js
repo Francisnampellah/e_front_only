@@ -21,6 +21,7 @@ const SignUp = (formData) => {
         throw new Error("Sign-up was not successful. UID missing.");
       }
 
+      localStorage.setItem("user", user);
       localStorage.setItem("access_token", user.accessToken);
 
       console.log(user);
@@ -35,19 +36,36 @@ const SignUp = (formData) => {
     });
 };
 // Sign in function
-const signIn = async (email, password) => {
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    console.log("User signed in successfully");
-  } catch (error) {
-    console.error("Error signing in:", error);
-  }
+const signIn = async (formData) => {
+  const { email, password } = formData;
+
+  return signInWithEmailAndPassword(auth, email, password)
+    .then((response) => {
+      const user = response.user;
+
+      if (!user.uid) {
+        throw new Error("Sign-in was not successful. User does not exist");
+      }
+
+      localStorage.setItem("user", user);
+      localStorage.setItem("access_token", user.accessToken);
+
+      console.log("User signed in successfully");
+      console.log(user);
+      return response;
+    })
+    .catch((error) => {
+      console.error("Error signing in:", error.message);
+      throw error; // rethrow the error if you want to handle it further up the call stack
+    });
 };
 
 // Sign out function
 const logOut = async () => {
   try {
     await signOut(auth);
+
+    localStorage.setItem("user", "");
     localStorage.setItem("access_token", "");
 
     console.log("User signed out successfully");

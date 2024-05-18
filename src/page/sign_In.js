@@ -1,12 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { The_Context } from "../data/Context";
+import { signIn, sign_in } from "../auth/auth";
+import Modal from "../component/costume_modal";
 
 const Sign_in = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [modal, setModal] = useState({
+    status: false,
+    success: false,
+    msg: "",
+    color: "",
+  });
   const { setAccess_token } = useContext(The_Context);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+
+    const { email, password } = formData;
+    if (!email || !password) {
+      console.error("Please Fill all fields");
+      // Optionally, you can set an error state to show a message to the user
+      return;
+    }
+
+    signIn(formData)
+      .then((response) => {
+        setAccess_token(response.user.accessToken);
+        setModal({
+          status: true,
+          success: true,
+          msg: "Logged in successfully",
+          color: "red",
+        });
+        setFormData({
+          email: "",
+          password: "",
+        });
+
+        console.log("User signed up successfully:", response);
+      })
+      .catch((error) => {
+        console.error("Error signing up:", error.message);
+        setModal({
+          status: true,
+          msg: "Account wasnt created" + " " + error.message,
+          color: "",
+        });
+      });
+  };
 
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <Modal modal={modal} setModal={setModal} name="Sign in" />
       <div className="mx-auto max-w-lg text-center">
         <h1 className="text-2xl font-bold sm:text-3xl">Get started today!</h1>
 
@@ -25,8 +82,11 @@ const Sign_in = () => {
           <div className="relative">
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
               className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-              placeholder="Enter email"
             />
 
             <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -56,8 +116,11 @@ const Sign_in = () => {
           <div className="relative">
             <input
               type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Enter your password"
               className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-              placeholder="Enter password"
             />
 
             <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -94,7 +157,7 @@ const Sign_in = () => {
           </p>
 
           <button
-            type="submit"
+            onClick={handleSignUp}
             className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
           >
             Sign in
