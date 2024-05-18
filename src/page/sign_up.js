@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SignUp } from "../auth/auth";
+import { The_Context } from "../data/Context";
 import Modal from "../component/costume_modal";
 import { useContext } from "react";
 
@@ -254,69 +255,3 @@ const Sign_Up = () => {
 };
 
 export default Sign_Up;
-
-// src/components/PhoneSignUp.js
-// import React, { useState } from 'react';
-// import { setupRecaptcha, sendOtp, verifyOtp } from '../auth/auth';
-// import SignUp from "./sign_up";
-import { The_Context } from "../data/Context";
-
-// const SignUp = () => {
-//   const [phoneNumber, setPhoneNumber] = useState('');
-//   const [otp, setOtp] = useState('');
-//   const [verificationId, setVerificationId] = useState('');
-//   const [isOtpSent, setIsOtpSent] = useState(false);
-
-//   const handleSendOtp = async () => {
-//     // setupRecaptcha();
-//     try {
-//       const confirmationResult = await sendOtp(phoneNumber);
-//       setVerificationId(confirmationResult.verificationId);
-//       setIsOtpSent(true);
-//       alert('OTP sent successfully!');
-//     } catch (error) {
-//       console.error('Error sending OTP:', error);
-//       alert('Error sending OTP:', error.message);
-//     }
-//   };
-
-//   const handleVerifyOtp = async () => {
-//     try {
-//       await verifyOtp(verificationId, otp);
-//       alert('Phone number verified and user signed up successfully!');
-//     } catch (error) {
-//       console.error('Error verifying OTP:', error);
-//       alert('Error verifying OTP:', error.message);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h2>Sign Up with Phone Number</h2>
-//       <div id="recaptcha-container"></div>
-//       {!isOtpSent ? (
-//         <div>
-//           <input
-//             type="text"
-//             placeholder="Phone Number"
-//             value={phoneNumber}
-//             onChange={(e) => setPhoneNumber(e.target.value)}
-//           />
-//           <button onClick={handleSendOtp}>Send OTP</button>
-//         </div>
-//       ) : (
-//         <div>
-//           <input
-//             type="text"
-//             placeholder="OTP"
-//             value={otp}
-//             onChange={(e) => setOtp(e.target.value)}
-//           />
-//           <button onClick={handleVerifyOtp}>Verify OTP</button>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default SignUp;
