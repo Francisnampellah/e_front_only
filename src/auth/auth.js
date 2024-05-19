@@ -21,7 +21,7 @@ const SignUp = (formData) => {
         throw new Error("Sign-up was not successful. UID missing.");
       }
 
-      localStorage.setItem("user", user);
+      localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("access_token", user.accessToken);
 
       console.log(user);
@@ -47,7 +47,7 @@ const signIn = async (formData) => {
         throw new Error("Sign-in was not successful. User does not exist");
       }
 
-      localStorage.setItem("user", user);
+      localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("access_token", user.accessToken);
 
       console.log("User signed in successfully");
