@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-
+import Add_order from "../data/add_order";
 export default function Modal({ showModal, setShowModal, product }) {
+  const [devLocation, setDevLocation] = useState();
+
   return (
     <>
-      {/* <button
-        className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button"
-        onClick={() => setShowModal(true)}
-      >
-        Open regular modal
-      </button> */}
       {showModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -31,7 +26,7 @@ export default function Modal({ showModal, setShowModal, product }) {
                 {/*body*/}
                 <div className="relative p-6 md:w-[60%] flex-auto justify-center items-center">
                   <p className="text">
-                    Weka jina lako na namba ya simu , Wahudumu wetu watakupigia kuweka oda yako.    
+                    Tafadhali andika mkoa na eneo la kuchukulia mzigo wako
                   </p>
 
                   <label
@@ -40,33 +35,17 @@ export default function Modal({ showModal, setShowModal, product }) {
                   >
                     <span class="text-xs font-medium text-gray-700">
                       {" "}
-                      User name{" "}
+                      mzigo utapokelewwa wapi ?
                     </span>
 
                     <input
                       type="text"
                       id="username"
-                      placeholder="John Doe"
+                      placeholder="Mahali utapokea mzigo"
                       class="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                      onChange={(e) => setDevLocation(e.target.value)}
                     />
                   </label>
-                  <label
-                    for="UserEmail"
-                    class="block overflow-hidden rounded-md border border-gray-400 px-3 py-2 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-                  >
-                    <span class="text-xs font-medium text-gray-700">
-                      {" "}
-                      phone number{" "}
-                    </span>
-
-                    <input
-                      type="number"
-                      id="phone_number"
-                      placeholder="07 XXX XXX XXX"
-                      class="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                    />
-                  </label>
-
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
@@ -80,9 +59,19 @@ export default function Modal({ showModal, setShowModal, product }) {
                   <button
                     className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      Add_order({
+                        item_id: product.id,
+                        item: product.productName,
+                        quantity: 1,
+                        devLocation: devLocation,
+                        price: product.price,
+                        delivered: false,
+                      });
+                      setShowModal(false);
+                    }}
                   >
-                   SUBMIT
+                    SUBMIT
                   </button>
                 </div>
               </div>

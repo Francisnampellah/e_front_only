@@ -25,13 +25,7 @@ const Order = () => {
     return date.toLocaleDateString();
   };
 
-  if (orders.length === 0) {
-    return (
-      <div className="p-4">
-        <h1 className="text-400">No Orders</h1>
-      </div>
-    );
-  }
+
 
   return (
     <div className="p-4">

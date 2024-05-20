@@ -327,14 +327,6 @@ function Product() {
                 <button
                   type="button"
                   onClick={() => {
-                    Add_order({
-                      item_id: product.id,
-                      item: product.productName,
-                      quantity: 1,
-                      devLocation: "Dar es Salaam",
-                      price: product.price,
-                      delivered: false,
-                    });
                     setShowModal(true);
                   }}
                   class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
