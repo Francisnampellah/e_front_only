@@ -62,7 +62,7 @@ function Navigation() {
                     <a
                       className="text-gray-500 transition hover:text-gray-500/75"
                       href="/order"
-                    > 
+                    >
                       Order
                     </a>
                   </li>
@@ -164,6 +164,19 @@ function Navigation() {
               </a>
             </li>
 
+            {access_token ? (
+              <li className="m-3">
+                <a
+                  className="text-gray-500 transition hover:text-gray-500/75"
+                  href="/order"
+                >
+                  Order
+                </a>
+              </li>
+            ) : (
+              ""
+            )}
+
             <li className="m-3">
               <a
                 className="text-gray-500 transition hover:text-gray-500/75"
@@ -183,14 +196,28 @@ function Navigation() {
                 Testimonal{" "}
               </a>
             </li>
-            <li className="m-3">
-              <a
-                className="rounded-md bg-teal-600  px-5 py-2.5 text-sm font-medium text-white shadow"
-                href="#"
-              >
-                Login
-              </a>
-            </li>
+
+            {access_token ? (
+              <li className="m-3">
+                <a href="/">
+                  <button
+                    onClick={handleLogOut}
+                    className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                  >
+                    Logout
+                  </button>
+                </a>
+              </li>
+            ) : (
+              <li className="m-3">
+                <a
+                  className="rounded-md bg-teal-600  px-5 py-2.5 text-sm font-medium text-white shadow"
+                  href="/sign_in"
+                >
+                  Login
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       )}
