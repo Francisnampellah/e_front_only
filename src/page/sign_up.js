@@ -17,6 +17,7 @@ const Sign_Up = () => {
     success: false,
     msg: "",
     color: "",
+    title: "",
   });
 
   const { setAccess_token } = useContext(The_Context);
@@ -46,7 +47,8 @@ const Sign_Up = () => {
           status: true,
           success: true,
           msg: "Account created successfully",
-          color: "red",
+          color: "green",
+          title: "Success",
         });
         setFormData({
           email: "",
@@ -64,6 +66,7 @@ const Sign_Up = () => {
           status: true,
           msg: "Account wasnt created" + " " + error.message,
           color: "",
+          title: "Failed",
         });
       });
   };

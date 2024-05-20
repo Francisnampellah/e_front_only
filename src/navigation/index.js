@@ -26,6 +26,7 @@ function Navigation() {
       success: true,
       msg: "Successfully logged out",
       color: "green",
+      title: "Logged out",
     });
     logOut();
   };

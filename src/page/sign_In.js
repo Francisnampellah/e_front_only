@@ -14,6 +14,7 @@ const Sign_in = () => {
     success: false,
     msg: "",
     color: "",
+    title: "",
   });
   const { setAccess_token } = useContext(The_Context);
 
@@ -43,6 +44,7 @@ const Sign_in = () => {
           success: true,
           msg: "Logged in successfully",
           color: "red",
+          title: "Signed in",
         });
         setFormData({
           email: "",
@@ -55,8 +57,11 @@ const Sign_in = () => {
         console.error("Error signing up:", error.message);
         setModal({
           status: true,
+          success: false,
+
           msg: "Account wasnt created" + " " + error.message,
           color: "",
+          title: "failed to log in",
         });
       });
   };
