@@ -89,7 +89,7 @@ const SearchProduct = () => {
             </div>
           </div>
           <div className="lg:col-span-3">
-            <Pagination items={products} />
+            <Pagination items={products}  />
           </div>
         </div>
       </div>
