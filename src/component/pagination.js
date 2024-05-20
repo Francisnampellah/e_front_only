@@ -33,8 +33,8 @@ const Pagination = ({ items }) => {
           onClick={() => handleClick(i)}
           className={
             currentPage === i
-              ? "inline-block rounded-full border border-indigo-600 bg-indigo-600 p-3 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 active"
-              : "inline-block rounded-full border border-indigo-600 p-3 text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
+              ? "inline-block rounded-full border border-[#80AD88] bg-[#80AD88] p-3 text-white hover:bg-transparent hover:text-[#80AD88] focus:outline-none focus:ring active:text-[#80AD88] active"
+              : "inline-block rounded-full border border-[#80AD88] p-3 text-[#80AD88] hover:bg-[#80AD88] hover:text-white focus:outline-none focus:ring active:bg-[#80AD88]"
           }
         >
           {i}
