@@ -331,6 +331,7 @@ function Product() {
                       item_id: product.id,
                       item: product.productName,
                       quantity: 1,
+                      devLocation: "Dar es Salaam",
                       price: product.price,
                       delivered: false,
                     });

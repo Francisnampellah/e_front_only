@@ -11,6 +11,7 @@ import Signup from "./page/sign_up";
 import Sign_in from "./page/sign_In";
 import { The_Context } from "./data/Context";
 import { useContext } from "react";
+import Order from "./page/orders" 
 
 export default function App() {
   const { access_token, setAccess_token } = useContext(The_Context);
@@ -28,6 +29,7 @@ export default function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/order" element={<Order />} />
         <Route path="/all_product" element={<SearchProduct />} />
         <Route path="product/:id" element={<Product />} />
         <Route path="/about" element={<About />} />

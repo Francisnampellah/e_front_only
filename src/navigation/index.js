@@ -20,7 +20,7 @@ function Navigation() {
     setIsMenuOpen(!isMenuOpen);
   };
 
- const handleLogOut = () => {
+  const handleLogOut = () => {
     setModal({
       status: true,
       success: true,
@@ -56,6 +56,19 @@ function Navigation() {
                     Product{" "}
                   </a>
                 </li>
+
+                {access_token ? (
+                  <li>
+                    <a
+                      className="text-gray-500 transition hover:text-gray-500/75"
+                      href="/order"
+                    > 
+                      Order
+                    </a>
+                  </li>
+                ) : (
+                  ""
+                )}
 
                 <li>
                   <a
