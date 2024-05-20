@@ -7,6 +7,7 @@ const Pagination = ({ items }) => {
   const totalPages = Math.ceil(items?.length / itemsPerPage);
 
   const handleClick = (pageNumber) => {
+    if (pageNumber < 1 || pageNumber > totalPages) return;
     setCurrentPage(pageNumber);
   };
 

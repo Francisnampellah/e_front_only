@@ -52,12 +52,12 @@ export default function Product_card({ data }) {
             <div class="mt-2 mb-5 flex items-center justify-between">
               <p>
                 <span class="text-3xl font-bold text-slate-900">
-                  {/* ${data?.productName} */}
+                  {data?.price}
                 </span>
-                <span class="text-sm text-slate-900 line-through">
+                {/* <span class="text-sm text-slate-900 line-through">
                   {" "}
                   ${data?.price}
-                </span>
+                </span> */}
               </p>
             </div>
             <a
