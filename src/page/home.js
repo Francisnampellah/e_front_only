@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import Shop from "../assets/shop.svg";
 import Product_card from "../component/product_card";
 import data from "../data/product.json";
 import { The_Context } from "../data/Context";
 import { useContext } from "react";
 import { auth } from "../firebase/firebase";
+import getAllProducts from "../data/get_product";
 
 function Home() {
   const { access_token } = useContext(The_Context);
 
+  const [product, setProduct] = useState([]);
 
+  useEffect(() => {
+    const x = getAllProducts();
+    setProduct(x);
+  }, []);
+
+  console.log(product);
 
   return (
     <div>

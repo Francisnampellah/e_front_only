@@ -12,6 +12,7 @@ import Sign_in from "./page/sign_In";
 import { The_Context } from "./data/Context";
 import { useContext } from "react";
 import Order from "./page/orders";
+import AddProduct from "./page/add_product";
 
 export default function App() {
   const { access_token, setAccess_token } = useContext(The_Context);
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/sign_up" element={<Signup />} />
         <Route path="/sign_in" element={<Sign_in />} />
+        <Route path="/add_product" element={<AddProduct />} />
       </Routes>
       <Footer />
     </div>
