@@ -11,10 +11,8 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 const uploadImages = async (imageFiles, productId) => {
   const storage = getStorage();
   const imageUrls = [];
-  const imagesNo = 0;
 
   for (const file of imageFiles) {
-    imagesNo++;
     const storageRef = ref(
       storage,
       `products_images/${productId}/${file.name}`

@@ -7,6 +7,7 @@ const AddProduct = () => {
     productCategory: "",
     price: "",
     productDetail: "",
+    vendor: "",
     productImages: [],
   });
   const [imageFiles, setImageFiles] = useState([]);
@@ -35,50 +36,89 @@ const AddProduct = () => {
   };
 
   return (
-    <div>
+    <div class="bg-gray-100 p-8 rounded-md shadow-md">
       <h2>Add Product</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="productName">Product Name:</label>
+        <div class="mb-4">
+          <label
+            for="productName"
+            class="text-sm block font-medium text-gray-700"
+          >
+            Product Name:
+          </label>
           <input
             type="text"
             id="productName"
             name="productName"
             value={formData.productName}
             onChange={handleChange}
+            class="block w-full px-3 py-2 rounded-md focus:outline-none focus:ring-indigo-500 focus:ring-1"
           />
         </div>
-        <div>
-          <label htmlFor="productCategory">Product Category:</label>
+        <div class="mb-4">
+          <label
+            for="productCategory"
+            class="text-sm block font-medium text-gray-700"
+          >
+            Product Category:
+          </label>
           <input
             type="text"
             id="productCategory"
             name="productCategory"
             value={formData.productCategory}
             onChange={handleChange}
+            class="block w-full px-3 py-2 rounded-md focus:outline-none focus:ring-indigo-500 focus:ring-1"
           />
         </div>
-        <div>
-          <label htmlFor="price">Price:</label>
+        <div class="mb-4">
+          <label for="price" class="text-sm block font-medium text-gray-700">
+            Vendor:
+          </label>
+          <input
+            type="text"
+            id="vendor"
+            name="vendor"
+            value={formData.vendor}
+            onChange={handleChange}
+            class="block w-full px-3 py-2 rounded-md focus:outline-none focus:ring-indigo-500 focus:ring-1"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="price" class="text-sm block font-medium text-gray-700">
+            Price:
+          </label>
           <input
             type="text"
             id="price"
             name="price"
             value={formData.price}
             onChange={handleChange}
+            class="block w-full px-3 py-2 rounded-md focus:outline-none focus:ring-indigo-500 focus:ring-1"
           />
         </div>
-        <div>
-          <label htmlFor="productDetail">Product Detail:</label>
+        <div class="mb-4">
+          <label
+            for="productDetail"
+            class="text-sm block font-medium text-gray-700"
+          >
+            Product Detail:
+          </label>
           <textarea
             id="productDetail"
             name="productDetail"
             value={formData.productDetail}
             onChange={handleChange}
-          />
+            class="block w-full px-3 py-2 rounded-md focus:outline-none focus:ring-indigo-500 focus:ring-1"
+          ></textarea>
         </div>
-        <div>
-          <label htmlFor="productImages">Product Images:</label>
+        <div class="mb-4">
+          <label
+            for="productImages"
+            class="text-sm block font-medium text-gray-700"
+          >
+            Product Images:
+          </label>
           <input
             type="file"
             id="productImages"
@@ -86,9 +126,15 @@ const AddProduct = () => {
             accept="image/*"
             multiple
             onChange={handleFileChange}
+            class="block w-full px-3 py-2 rounded-md focus:outline-none focus:ring-indigo-500 focus:ring-1"
           />
         </div>
-        <button type="submit">Add Product</button>
+        <button
+          type="submit"
+          class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Add Product
+        </button>
       </form>
     </div>
   );
